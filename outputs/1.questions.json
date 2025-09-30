@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "question": "Tell me about a time you faced a significant technical challenge in one of your projects, particularly one related to backend development or data management. How did you approach resolving it, and what did you learn from the experience?",
+    "category": "behavioral",
+    "purpose": "Assess problem-solving skills, resilience, and ability to learn from challenges in a technical context relevant to backend engineering."
+  },
+  {
+    "id": 2,
+    "question": "Your CV mentions collaboration, specifically with an Automation Engineer on the 'Automated Warehouse Management' project. Can you describe a situation where you had to work closely with another team member or discipline, and what steps you took to ensure effective communication and a successful project outcome?",
+    "category": "behavioral",
+    "purpose": "Evaluate teamwork, communication skills, and ability to collaborate effectively across different technical domains and roles."
+  },
+  {
+    "id": 3,
+    "question": "You've extensively used FastAPI for API development in your projects. Can you explain the core principles of designing RESTful APIs and how you ensured your APIs were robust, secure, and followed best practices, especially considering data validation and error handling?",
+    "category": "technical",
+    "purpose": "Assess understanding of RESTful API design principles, practical application of security and robustness, and knowledge of validation/error handling."
+  },
+  {
+    "id": 4,
+    "question": "Your skills include Docker, Kubernetes, and AWS. How do these technologies contribute to building scalable, reliable, and maintainable backend systems? Can you describe any hands-on experience you've had deploying or managing a backend application using them?",
+    "category": "technical",
+    "purpose": "Evaluate knowledge of modern deployment and infrastructure practices, cloud technologies, and their impact on backend architecture and operations."
+  },
+  {
+    "id": 5,
+    "question": "Your CV lists experience with PostgreSQL and SQL Server. Can you discuss the key differences between relational and non-relational (NoSQL) databases, and in what specific scenarios you would choose one over the other for a backend application's data storage needs?",
+    "category": "technical",
+    "purpose": "Assess fundamental database knowledge, understanding of different database paradigms, and decision-making abilities for data storage solutions."
+  },
+  {
+    "id": 6,
+    "question": "Regarding your 'University Admission Prediction System' project, you mentioned developing RESTful APIs and integrating them with a React frontend. Can you elaborate on the most complex API endpoint you designed for this system, and the strategies you used to ensure efficient data processing and integration with the frontend?",
+    "category": "cv_based",
+    "purpose": "Understand specific project implementation details, complexity of API design, and practical considerations for data flow and integration between backend and frontend."
+  },
+  {
+    "id": 7,
+    "question": "In your 'QR Attendance System' project, you utilized Python, FastAPI, and Sockets for client-server communication. Can you explain the specific role Sockets played in this application beyond standard HTTP requests, and how you handled real-time data exchange or event-driven updates on the backend?",
+    "category": "cv_based",
+    "purpose": "Deep dive into real-time communication experience, understanding of network protocols, and specific implementation details of a project showing advanced backend concepts."
+  },
+  {
+    "id": 8,
+    "question": "Imagine you've just deployed a critical backend service, and suddenly, monitoring alerts indicate a significant increase in latency and occasional 500 errors. You suspect a database bottleneck, but you don't have immediate access to detailed production database logs. What would be your first steps to diagnose the issue, and what tools or strategies would you employ to pinpoint the root cause?",
+    "category": "creative",
+    "purpose": "Test problem-solving skills, critical thinking under pressure, diagnostic methodology, and understanding of backend system debugging and incident response."
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "question": "Your CV showcases a strong background in Marketing and Communications, with various content and social media projects. What specifically has motivated you to pursue a career as a Backend Engineer, which is a significant shift, and how have you been preparing yourself for this new domain?",
+    "category": "behavioral",
+    "purpose": "Assess the candidate's motivation for a career change, self-learning capabilities, and understanding of the pivot from a marketing to a technical role."
+  },
+  {
+    "id": 2,
+    "question": "Throughout your experience, you've engaged with online platforms extensively. Can you describe a time when you faced an unexpected technical issue or a complex problem in one of your projects, even if it was marketing-related? How did you approach diagnosing and solving it?",
+    "category": "behavioral",
+    "purpose": "Evaluate problem-solving skills, critical thinking under pressure, and resilience, transferable from any domain."
+  },
+  {
+    "id": 3,
+    "question": "Given your extensive interaction with various online applications like social media platforms, in your own words, how would you describe the primary function and importance of the 'backend' component of a typical web application or a service like Facebook or TikTok?",
+    "category": "technical",
+    "purpose": "Assess the candidate's foundational conceptual understanding of backend systems, even without direct experience, indicating curiosity and logical thought."
+  },
+  {
+    "id": 4,
+    "question": "You've listed 'Ky nang su dung AI' (AI tools) as a skill. While these are generally consumer-facing, they rely on complex backend systems. If you were given the task of understanding how the data flows from a user's prompt to an AI's response and back, what steps would you take to research and conceptualize this process, assuming you're starting with limited knowledge?",
+    "category": "technical",
+    "purpose": "Evaluate the candidate's approach to learning complex technical concepts, research skills, and ability to break down a system into logical components."
+  },
+  {
+    "id": 5,
+    "question": "In your 'Du an trang facebook ban hop com Nhat Ghib Bento bang AI' project, you managed a fanpage, ran ads, and handled approximately 40 inbox messages daily. From a conceptual standpoint, how do you think a platform like Facebook internally manages the storage and retrieval of user data, posts, messages, and ad campaign information to ensure they are delivered and processed efficiently?",
+    "category": "technical",
+    "purpose": "Probe for an understanding of data management and system efficiency from a user perspective, bridging their experience to backend concepts."
+  },
+  {
+    "id": 6,
+    "question": "As a Social Media Intern at Giai Dieu Moi, you mentioned 'toi uu hoa noi dung video ngan' (optimizing short video content) and achieving high reach and views. Can you elaborate on the methods you used for optimization and how you measured its success? Did you ever ponder the underlying algorithms or technical logic these platforms use to recommend content or measure engagement?",
+    "category": "cv_based",
+    "purpose": "Understand the candidate's analytical thinking in their past roles and whether they've considered the technical 'how' behind the marketing 'what'."
+  },
+  {
+    "id": 7,
+    "question": "Your experience includes developing content strategies and working with designers. In your role as a Content Writer for Camellia Coffee and Tea, you built a 4-week content plan. If you were asked to design a system that dynamically generates and schedules this content, what kind of data would it need to store, and what rules or logic would you envision for its backend to operate effectively?",
+    "category": "cv_based",
+    "purpose": "Assess the candidate's ability to translate high-level functional requirements (content planning) into conceptual data structures and logical processes relevant to backend design."
+  },
+  {
+    "id": 8,
+    "question": "Imagine you are tasked with building the backend for a new online educational platform. The platform needs to handle user authentication, store course progress, manage student submissions, and allow instructors to upload materials. Without focusing on specific programming languages, what would be your initial high-level steps in planning the backend architecture, and what potential challenges do you anticipate?",
+    "category": "creative",
+    "purpose": "Test the candidate's problem-solving approach, ability to decompose a complex problem, and foresight regarding system design challenges, even with limited technical background."
+  }
+]

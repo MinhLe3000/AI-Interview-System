@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "question": "In your 'Booking Homestay Simple' group project, you collaborated with one other member. Can you describe a significant technical disagreement or challenge you encountered within the team and how you approached resolving it?",
+    "category": "behavioral",
+    "purpose": "Assess teamwork, conflict resolution, and problem-solving skills in a collaborative environment."
+  },
+  {
+    "id": 2,
+    "question": "Your 'Booking Homestay DDD' project is a personal graduation thesis, indicating a high degree of self-direction. Tell me about a time when you faced a significant technical hurdle in this project, how you independently researched and learned what was needed, and ultimately overcame it.",
+    "category": "behavioral",
+    "purpose": "Evaluate self-motivation, independent learning ability, and resilience in overcoming technical challenges."
+  },
+  {
+    "id": 3,
+    "question": "You mentioned applying Domain-Driven Design (DDD) principles in your 'Booking Homestay DDD' project. Can you explain your understanding of a Bounded Context and an Aggregate in DDD, and provide an example of how you implemented them in your homestay booking system?",
+    "category": "technical",
+    "purpose": "Assess deep understanding of DDD principles and ability to apply them practically in system design."
+  },
+  {
+    "id": 4,
+    "question": "You stated that you improved system load capacity up to 6000 requests per second using Redis caching and Kafka for database synchronization in your 'Booking Homestay DDD' project. Could you elaborate on the specific strategies and architecture you employed with Redis and Kafka to achieve this performance improvement, and how you measured it?",
+    "category": "technical",
+    "purpose": "Evaluate practical knowledge of caching, message queues, and performance optimization techniques, as well as an understanding of performance testing."
+  },
+  {
+    "id": 5,
+    "question": "Given your experience with ElasticSearch for auto-suggest and Kafka for database synchronization, what are some of the common challenges or trade-offs you've encountered when working with distributed systems, and how do you approach ensuring data consistency and reliability?",
+    "category": "technical",
+    "purpose": "Assess understanding of distributed system challenges (e.g., eventual consistency, data synchronization) and strategies for managing them."
+  },
+  {
+    "id": 6,
+    "question": "In your 'Booking Homestay DDD' project, you integrated AI & Machine Learning (Gemini AI) for personalized travel recommendations. Can you walk me through the process of integrating Gemini AI, how you designed the recommendation logic, and what kind of data pipeline was involved to feed information to the AI model?",
+    "category": "cv_based",
+    "purpose": "Deep dive into a specific feature, assess the candidate's understanding of AI integration, data flow, and practical application."
+  },
+  {
+    "id": 7,
+    "question": "For the 'Booking Homestay Simple' project, you played the role of a Backend Developer and implemented real-time chat functionality using Pusher. Describe the architectural design choices you made for this chat feature, how you handled user authentication and message persistence, and any challenges you faced with Pusher's integration.",
+    "category": "cv_based",
+    "purpose": "Understand specific backend development skills, real-time system design, and problem-solving within a concrete project feature."
+  },
+  {
+    "id": 8,
+    "question": "Imagine you are tasked with adding a new feature to a homestay booking platform: 'Dynamic Pricing' based on demand, seasonality, and competitor prices. How would you design the backend architecture for this feature, considering scalability, real-time data processing, and integration with existing booking flows? What technologies would you consider, and what are the main challenges you foresee?",
+    "category": "creative",
+    "purpose": "Test system design capabilities, critical thinking, understanding of real-time data processing, and ability to identify potential challenges in a complex scenario."
+  }
+]

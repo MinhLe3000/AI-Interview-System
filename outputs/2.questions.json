@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "question": "Given your strong communication and teamwork skills mentioned in your CV, can you describe a time when you had to work with a team to overcome a significant challenge? What was your specific role and contribution?",
+    "category": "behavioral",
+    "purpose": "Assess teamwork, problem-solving abilities, and the candidate's specific contribution within a group setting."
+  },
+  {
+    "id": 2,
+    "question": "Your CV indicates a strong background and objective in Marketing. What motivated your interest in pursuing a career as a Backend Engineer, and how do you envision yourself adapting to this new technical domain?",
+    "category": "behavioral",
+    "purpose": "Understand the candidate's motivation for a career transition, their self-awareness, and their strategy for adapting to a new technical field."
+  },
+  {
+    "id": 3,
+    "question": "From your understanding, what is the fundamental difference between frontend and backend development, and what aspects of backend development specifically capture your interest?",
+    "category": "technical",
+    "purpose": "Gauge the candidate's basic conceptual understanding of software architecture and their specific interest in backend roles, given their non-technical background."
+  },
+  {
+    "id": 4,
+    "question": "While your CV highlights skills in communication and marketing tools, have you had any exposure or personal experience with programming languages, scripting, or working with databases, even if self-taught or in an academic context?",
+    "category": "technical",
+    "purpose": "Probe for any foundational technical knowledge, self-study, or hidden aptitude in programming or data management that might not be explicit in a Marketing-focused CV."
+  },
+  {
+    "id": 5,
+    "question": "Can you explain in simple terms what an API (Application Programming Interface) is and why it's considered essential for different software components or services to communicate with each other?",
+    "category": "technical",
+    "purpose": "Assess understanding of a core backend concept (APIs) and its role in system integration, at a conceptual level."
+  },
+  {
+    "id": 6,
+    "question": "Your CV mentions participation in 'scientific research projects'. Could you tell us about one of these projects in more detail, focusing on any analytical, logical, or problem-solving tasks you performed, and any tools or methods you used?",
+    "category": "cv_based",
+    "purpose": "Explore potential analytical skills, structured problem-solving experience, and intellectual curiosity from their academic past, which could be transferable to an engineering role."
+  },
+  {
+    "id": 7,
+    "question": "You highlight 'self-taught' skills and a readiness to learn ('luôn sẵn sàng học hỏi') in your self-introduction. Can you provide an example of how you've applied this self-learning ability to acquire a new skill or overcome a challenge, especially if it relates to a technical concept?",
+    "category": "cv_based",
+    "purpose": "Evaluate their proactive learning approach and ability to independently acquire new knowledge, which is crucial for a career change into a technical field."
+  },
+  {
+    "id": 8,
+    "question": "Imagine you are tasked with designing the backend logic for a new user authentication system. Even without direct experience, how would you approach thinking about the core components, data storage, and security considerations involved?",
+    "category": "creative",
+    "purpose": "Test strategic thinking, problem-solving methodology, and the ability to think conceptually about system design, even without specific technical knowledge or tools."
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "question": "Your profile mentions 'teamwork' as a soft skill and you've collaborated with a team at IriTech. Can you describe a specific situation where you had to work closely with other developers or stakeholders to overcome a technical challenge? What was your role in achieving the solution, and what did you learn from that experience?",
+    "category": "behavioral",
+    "purpose": "Assess teamwork, collaboration, conflict resolution, and ability to contribute effectively within a team."
+  },
+  {
+    "id": 2,
+    "question": "You state you are a 'fast learner, adaptable' in your profile. As this Backend Engineer role might involve different technologies than your core Android experience, how do you typically approach learning a completely new programming language, framework, or system architecture when faced with a project requirement? Can you give an example?",
+    "category": "behavioral",
+    "purpose": "Evaluate adaptability, self-learning capabilities, and proactive approach to acquiring new technical skills relevant for a career transition."
+  },
+  {
+    "id": 3,
+    "question": "In your 'Library Book Borrow and Return Application' project, you utilized Firebase for authentication and Firestore for the database. From a backend engineering perspective, can you explain the key differences between a NoSQL database like Firestore and a traditional SQL database, and in what scenarios would you choose one over the other for a backend service?",
+    "category": "technical",
+    "purpose": "Assess understanding of different database paradigms, data modeling considerations, and their practical application in backend systems."
+  },
+  {
+    "id": 4,
+    "question": "Your Android applications communicate with backend services, even if through SDKs like Firebase. Can you explain the fundamental concepts of how a mobile application typically requests and sends data to a backend server? What are common protocols and architectural styles used for this communication (e.g., RESTful APIs)?",
+    "category": "technical",
+    "purpose": "Evaluate understanding of client-server architecture, API concepts, and data exchange principles, which are foundational for backend engineering."
+  },
+  {
+    "id": 5,
+    "question": "You listed Kotlin, Java, and Python among your programming skills. If you were tasked with designing and building a new backend service from scratch, which of these languages would you consider using and why? What are the specific strengths of your chosen language that make it suitable for backend development?",
+    "category": "technical",
+    "purpose": "Understand their reasoning for technology choices, knowledge of language suitability for backend development, and their preferred development environment."
+  },
+  {
+    "id": 6,
+    "question": "Let's delve deeper into your 'Library Book Borrow and Return Application.' You implemented a 'request > approval > confirmation' workflow. Can you walk me through how you designed the data model in Firestore to support this workflow, ensuring data integrity and handling different user roles (e.g., borrower, librarian) effectively?",
+    "category": "cv_based",
+    "purpose": "Gain insight into their practical experience with database design, data modeling in a NoSQL environment, and considerations for complex workflows and access control."
+  },
+  {
+    "id": 7,
+    "question": "At IriTech, you 'developed and optimized Android applications using IriTech SDK for iris recognition and identity verification.' While your primary role was Android-focused, can you describe any interactions your application had with a backend system in this context? For example, how was the identity verified, or where were user biometric templates stored securely, and what backend components might have been involved in that overall process?",
+    "category": "cv_based",
+    "purpose": "Encourage the candidate to think about the broader system architecture from a client-side perspective, identifying potential backend touchpoints, and demonstrating system-level thinking."
+  },
+  {
+    "id": 8,
+    "question": "Imagine you need to design a backend service for a new social media application where users can post short text updates and follow other users. Users expect fast updates and a personalized feed. How would you approach designing this service from a backend perspective, considering aspects like API endpoints, data storage choices, and ensuring good performance and scalability for a growing user base?",
+    "category": "creative",
+    "purpose": "Evaluate problem-solving skills, architectural thinking, ability to consider scalability, performance, and data modeling for a common backend scenario."
+  }
+]
