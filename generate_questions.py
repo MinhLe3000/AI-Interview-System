@@ -32,8 +32,23 @@ VISION_MODEL_CANDIDATES = [
 
 
 def read_env() -> None:
-	load_dotenv()
+	# Try loading .env from current directory
+	load_dotenv(".env")
 	api_key = os.getenv("GEMINI_API_KEY")
+	
+	# If not found via dotenv, try reading .env file directly
+	if not api_key:
+		try:
+			with open(".env", "r", encoding="utf-8") as f:
+				for line in f:
+					if line.startswith("GEMINI_API_KEY="):
+						api_key = line.split("=", 1)[1].strip()
+						break
+		except Exception as e:
+			print(f"Error reading .env file: {e}")
+	
+	print(f"DEBUG: API Key found: {api_key is not None}")
+	print(f"DEBUG: API Key value: {api_key}")
 	if not api_key:
 		raise RuntimeError("Missing GEMINI_API_KEY in environment/.env")
 	genai.configure(api_key=api_key)
@@ -97,45 +112,45 @@ def extract_text_from_cv(path: Path) -> str:
 
 
 SYSTEM_PROMPT = (
-	"You are a professional HR interviewer.\n\n"
-	"Given the following candidate CV:\n\n[CV_TEXT]\n\n"
-	"And the target job position: [JOB_TITLE]\n\n"
-	"Generate 8 interview questions in structured JSON format:\n"
-	"- 2 behavioral questions (about teamwork, challenges, motivation...)\n"
-	"- 3 technical knowledge questions relevant to the job\n"
-	"- 2 questions specifically about the candidate's past projects or experience mentioned in their CV\n"
-	"- 1 creative / hypothetical scenario question to test problem solving or critical thinking\n\n"
-	"Return in the following JSON format with consistent structure:\n"
-	"Ensure each question has:\n"
-	"- id: sequential number (1-8)\n"
-	"- question: the actual interview question\n"
+	"Bạn là một chuyên gia phỏng vấn nhân sự chuyên nghiệp.\n\n"
+	"Dựa trên CV của ứng viên sau:\n\n[CV_TEXT]\n\n"
+	"Và vị trí công việc mục tiêu: [JOB_TITLE]\n\n"
+	"Hãy tạo 8 câu hỏi phỏng vấn bằng tiếng Việt theo định dạng JSON có cấu trúc:\n"
+	"- 2 câu hỏi về hành vi (về làm việc nhóm, thách thức, động lực...)\n"
+	"- 3 câu hỏi kiến thức kỹ thuật liên quan đến công việc\n"
+	"- 2 câu hỏi cụ thể về các dự án hoặc kinh nghiệm trước đây của ứng viên được đề cập trong CV\n"
+	"- 1 câu hỏi sáng tạo / tình huống giả định để kiểm tra khả năng giải quyết vấn đề hoặc tư duy phản biện\n\n"
+	"Trả về theo định dạng JSON có cấu trúc nhất quán:\n"
+	"Đảm bảo mỗi câu hỏi có:\n"
+	"- id: số thứ tự (1-8)\n"
+	"- question: câu hỏi phỏng vấn thực tế\n"
 	"- category: 'behavioral', 'technical', 'cv_based', 'creative'\n"
-	"- purpose: brief explanation of what this question aims to assess\n"
-	"For example:\n"
+	"- purpose: giải thích ngắn gọn về mục đích đánh giá của câu hỏi này\n"
+	"Ví dụ:\n"
 		"[\n"
 	"  {\n"
 	"    \"id\": 1,\n"
-	"    \"question\": \"Tell me about a time when you had to work in a team to solve a difficult problem.\",\n"
+	"    \"question\": \"Hãy kể về một lần bạn phải làm việc nhóm để giải quyết một vấn đề khó khăn.\",\n"
 	"    \"category\": \"behavioral\",\n"
-	"    \"purpose\": \"Assess teamwork and problem-solving skills\"\n"
+	"    \"purpose\": \"Đánh giá kỹ năng làm việc nhóm và giải quyết vấn đề\"\n"
 	"  },\n"
 	"  {\n"
 	"    \"id\": 2,\n"
-	"    \"question\": \"What programming languages are you most proficient in?\",\n"
+	"    \"question\": \"Bạn thành thạo nhất những ngôn ngữ lập trình nào?\",\n"
 	"    \"category\": \"technical\",\n"
-	"    \"purpose\": \"Evaluate technical knowledge and expertise\"\n"
+	"    \"purpose\": \"Đánh giá kiến thức và chuyên môn kỹ thuật\"\n"
 	"  },\n"
 	"  {\n"
 	"    \"id\": 3,\n"
-	"    \"question\": \"Can you walk me through your experience with the project mentioned in your CV?\",\n"
+	"    \"question\": \"Bạn có thể chia sẻ chi tiết về kinh nghiệm với dự án được đề cập trong CV của bạn không?\",\n"
 	"    \"category\": \"cv_based\",\n"
-	"    \"purpose\": \"Understand specific project experience and achievements\"\n"
+	"    \"purpose\": \"Hiểu rõ kinh nghiệm dự án cụ thể và thành tựu\"\n"
 	"  },\n"
 	"  {\n"
 	"    \"id\": 4,\n"
-	"    \"question\": \"How would you handle a situation where your team disagrees on the technical approach?\",\n"
+	"    \"question\": \"Bạn sẽ xử lý như thế nào khi nhóm của bạn không đồng ý về phương pháp kỹ thuật?\",\n"
 	"    \"category\": \"creative\",\n"
-	"    \"purpose\": \"Test conflict resolution and critical thinking\"\n"
+	"    \"purpose\": \"Kiểm tra khả năng giải quyết xung đột và tư duy phản biện\"\n"
 	"  }\n"
 	"]\n\n"
 )
@@ -156,44 +171,44 @@ def call_gemini_with_image(image_path: Path, job_title: str) -> str:
 	model_name = pick_supported_model(VISION_MODEL_CANDIDATES) or VISION_MODEL_CANDIDATES[0]
 	model = genai.GenerativeModel(model_name)
 	instruction = (
-		"You are a professional HR interviewer. Given the following CV image and the target job position: "
+		"Bạn là một chuyên gia phỏng vấn nhân sự chuyên nghiệp. Dựa trên hình ảnh CV sau và vị trí công việc mục tiêu: "
 		f"{job_title}. "
-		"Extract key details from the CV and generate 8 interview questions in JSON format with consistent structure:\n"
-		"Generate 8 questions total:\n"
-		"- 2 behavioral questions (about teamwork, challenges, motivation...)\n"
-		"- 3 technical knowledge questions relevant to the job\n"
-		"- 2 questions specifically about the candidate's past projects or experience mentioned in their CV\n"
-		"- 1 creative / hypothetical scenario question to test problem solving or critical thinking\n\n"
-		"Ensure each question has:\n"
-		"- id: sequential number (1-8)\n"
-		"- question: the actual interview question\n"
-		"- category: one of 'behavioral', 'technical', 'cv_based', 'creative'\n"
-		"- purpose: brief explanation of what this question aims to assess"
-		"For example:\n"
+		"Hãy trích xuất các chi tiết quan trọng từ CV và tạo 8 câu hỏi phỏng vấn bằng tiếng Việt theo định dạng JSON có cấu trúc nhất quán:\n"
+		"Tạo tổng cộng 8 câu hỏi:\n"
+		"- 2 câu hỏi về hành vi (về làm việc nhóm, thách thức, động lực...)\n"
+		"- 3 câu hỏi kiến thức kỹ thuật liên quan đến công việc\n"
+		"- 2 câu hỏi cụ thể về các dự án hoặc kinh nghiệm trước đây của ứng viên được đề cập trong CV\n"
+		"- 1 câu hỏi sáng tạo / tình huống giả định để kiểm tra khả năng giải quyết vấn đề hoặc tư duy phản biện\n\n"
+		"Đảm bảo mỗi câu hỏi có:\n"
+		"- id: số thứ tự (1-8)\n"
+		"- question: câu hỏi phỏng vấn thực tế\n"
+		"- category: một trong 'behavioral', 'technical', 'cv_based', 'creative'\n"
+		"- purpose: giải thích ngắn gọn về mục đích đánh giá của câu hỏi này\n"
+		"Ví dụ:\n"
 		"[\n"
 		"  {\n"
 		"    \"id\": 1,\n"
-		"    \"question\": \"Tell me about a time when you had to work in a team to solve a difficult problem.\",\n"
+		"    \"question\": \"Hãy kể về một lần bạn phải làm việc nhóm để giải quyết một vấn đề khó khăn.\",\n"
 		"    \"category\": \"behavioral\",\n"
-		"    \"purpose\": \"Assess teamwork and problem-solving skills\"\n"
+		"    \"purpose\": \"Đánh giá kỹ năng làm việc nhóm và giải quyết vấn đề\"\n"
 		"  },\n"
 		"  {\n"
 		"    \"id\": 2,\n"
-		"    \"question\": \"What programming languages are you most proficient in?\",\n"
+		"    \"question\": \"Bạn thành thạo nhất những ngôn ngữ lập trình nào?\",\n"
 		"    \"category\": \"technical\",\n"
-		"    \"purpose\": \"Evaluate technical knowledge and expertise\"\n"
+		"    \"purpose\": \"Đánh giá kiến thức và chuyên môn kỹ thuật\"\n"
 		"  },\n"
 		"  {\n"
 		"    \"id\": 3,\n"
-		"    \"question\": \"Can you walk me through your experience with the project mentioned in your CV?\",\n"
+		"    \"question\": \"Bạn có thể chia sẻ chi tiết về kinh nghiệm với dự án được đề cập trong CV của bạn không?\",\n"
 		"    \"category\": \"cv_based\",\n"
-		"    \"purpose\": \"Understand specific project experience and achievements\"\n"
+		"    \"purpose\": \"Hiểu rõ kinh nghiệm dự án cụ thể và thành tựu\"\n"
 		"  },\n"
 		"  {\n"
 		"    \"id\": 4,\n"
-		"    \"question\": \"How would you handle a situation where your team disagrees on the technical approach?\",\n"
+		"    \"question\": \"Bạn sẽ xử lý như thế nào khi nhóm của bạn không đồng ý về phương pháp kỹ thuật?\",\n"
 		"    \"category\": \"creative\",\n"
-		"    \"purpose\": \"Test conflict resolution and critical thinking\"\n"
+		"    \"purpose\": \"Kiểm tra khả năng giải quyết xung đột và tư duy phản biện\"\n"
 		"  }\n"
 		"]\n\n"
 	)
