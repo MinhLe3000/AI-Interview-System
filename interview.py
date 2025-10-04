@@ -117,7 +117,7 @@ class InterviewSystem:
     
     def _generate_technical_questions(self) -> List[Dict[str, Any]]:
         """Tạo 3 câu hỏi kỹ thuật từ knowledge database"""
-        # Tìm thông tin kỹ thuật liên quan
+        # Tìm thông tin kỹ thuật liên quan ( cần sửa lại)
         knowledge_docs = self.knowledge_retriever.get_relevant_documents("kiến thức kỹ thuật lập trình công nghệ")
         
         prompt_template = """
@@ -272,7 +272,7 @@ class InterviewSystem:
             if i == 7:  # Câu hỏi sáng tạo
                 if self.total_score < 8:
                     print(f"\n📊 Điểm hiện tại: {self.total_score}/10")
-                    print("⚠️  Bạn cần đạt ít nhất 8 điểm để tiếp tục câu hỏi sáng tạo.")
+                    print("⚠️  Bạn cần đạt ít nhất 8 điểm để tiếp tục câu hỏi sáng tạo.") # Hãy sửa lại phần này, không cần phải phải in ra
                     break
             
             print(f"\n❓ Câu hỏi {question['id']} ({question['category']}):")
