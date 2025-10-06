@@ -2,6 +2,7 @@ google-generativeai
 pillow
 pytesseract
 pypdf
+PyMuPDF
 python-dotenv
 requests
 

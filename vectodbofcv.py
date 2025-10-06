@@ -5,6 +5,7 @@ from typing import List
 from PIL import Image
 import pytesseract
 import nltk
+import fitz  # PyMuPDF for PDF processing
 
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -24,15 +25,51 @@ def extract_text_from_images(image_paths: List[Path]) -> str:
     return "\n".join(parts)
 
 
-def find_images_in_cv_folder(cv_folder: Path) -> List[Path]:
-    exts = {".png", ".jpg", ".jpeg", ".tiff", ".bmp"}
-    files = [p for p in cv_folder.iterdir() if p.suffix.lower() in exts]
-    return sorted(files)
+def extract_text_from_pdfs(pdf_paths: List[Path]) -> str:
+    """Trích xuất text từ các file PDF"""
+    parts = []
+    for pdf_path in pdf_paths:
+        try:
+            # Mở PDF file
+            doc = fitz.open(pdf_path)
+            text_content = []
+            
+            # Đọc từng trang
+            for page_num in range(doc.page_count):
+                page = doc.load_page(page_num)
+                text = page.get_text()
+                if text.strip():  # Chỉ thêm nếu có text
+                    text_content.append(text)
+            
+            doc.close()
+            
+            if text_content:
+                combined_text = "\n".join(text_content)
+                parts.append(f"\n\n--- {pdf_path.name} ---\n\n" + combined_text)
+                print(f"✅ Extracted text from PDF: {pdf_path.name} ({len(text_content)} pages)")
+            else:
+                print(f"⚠️  No text found in PDF: {pdf_path.name}")
+                
+        except Exception as e:
+            print(f"❌ Error extracting text from PDF {pdf_path}: {e}")
+    
+    return "\n".join(parts)
+
+
+def find_files_in_cv_folder(cv_folder: Path) -> tuple[List[Path], List[Path]]:
+    """Tìm tất cả file ảnh và PDF trong thư mục CV"""
+    image_exts = {".png", ".jpg", ".jpeg", ".tiff", ".bmp"}
+    pdf_exts = {".pdf"}
+    
+    image_files = [p for p in cv_folder.iterdir() if p.suffix.lower() in image_exts]
+    pdf_files = [p for p in cv_folder.iterdir() if p.suffix.lower() in pdf_exts]
+    
+    return sorted(image_files), sorted(pdf_files)
 
 
 def main(
     cv_dir: str = "CV",
-    save_path: str = "vector_db_cv",
+    save_path: str = "vector_db_cv2",
     model_name: str = "intfloat/multilingual-e5-large-instruct",
 ):
     # Ensure NLTK tokenizer available
@@ -46,15 +83,34 @@ def main(
     if not cv_folder.exists():
         raise SystemExit(f"CV folder not found: {cv_folder.resolve()}")
 
-    images = find_images_in_cv_folder(cv_folder)
-    if not images:
-        raise SystemExit(f"No images found in {cv_folder}. Put your CV images (png/jpg) there.")
+    # Tìm tất cả file ảnh và PDF
+    images, pdfs = find_files_in_cv_folder(cv_folder)
+    
+    if not images and not pdfs:
+        raise SystemExit(f"No images or PDFs found in {cv_folder}. Put your CV files (png/jpg/pdf) there.")
 
-    print(f"Found {len(images)} images. Running OCR...")
-    full_text = extract_text_from_images(images)
+    print(f"📁 Found {len(images)} images and {len(pdfs)} PDFs")
+    
+    # Trích xuất text từ cả ảnh và PDF
+    full_text_parts = []
+    
+    if images:
+        print(f"🔍 Running OCR on {len(images)} images...")
+        image_text = extract_text_from_images(images)
+        if image_text.strip():
+            full_text_parts.append(image_text)
+    
+    if pdfs:
+        print(f"📄 Extracting text from {len(pdfs)} PDFs...")
+        pdf_text = extract_text_from_pdfs(pdfs)
+        if pdf_text.strip():
+            full_text_parts.append(pdf_text)
+    
+    # Kết hợp tất cả text
+    full_text = "\n\n".join(full_text_parts)
 
     if not full_text.strip():
-        raise SystemExit("No text extracted from images. Check Tesseract installation and image quality.")
+        raise SystemExit("No text extracted from files. Check Tesseract installation (for images) and PDF file integrity.")
 
     # Optional: save extracted text for inspection
     out_text_path = Path("outputs")

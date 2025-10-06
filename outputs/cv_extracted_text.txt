@@ -1,78 +1,56 @@
 
 
---- 2.png ---
+--- Tuan_CV_trs.pdf ---
 
-%
-
-Théng tin lién hé
-
-ign thoal
-
-Email
-
-Bjachi
-
-6i nét vé ban than
-
-=
-
-+ ky nang giao tigp va tam vige nom
-
-Vel kin nghigm in a3t_nhom
-luong niu dy hye thus, 81d
-‘Fan tayén daze k¥ nding nh dao,
-lam vite nm ve ta dy chi tng,
-61 cang c6 th man trong giao
-‘ep ve. thuyét tinh tue dom
-‘dong, Vt nin dom mé Marketing
-tolluon sin song hee hd. dng g6p
-‘a thich ngh wt ml thir thach.
-
-Copeut
-PowerPoint
-
-Word
-
-‘10 (cain)
-
-Ciao tgp va kim vge norm
-Thuyét tinh
-
-Hig bit earn vb SEO & vit ach
-
-Tu duy tht dyn
-Tin bec img dung (Word & xc)
-ng Anh 81
-
-TRUONG LE
-NHAT LINH
-
-Intern Marketing
-
-2 MUCTIEU NGHE NGHIEP
-
-‘Tel mong muén duse “va cham” vol moi truéng arm
-ie the t6, 8 bin kign thue than i nna va hoe
-ni tU chinh ahdng tri nghiém thét. TS de Biét
-hung tha vol Content Marketing, Social Media va cic
-high dich truyén thong sing tae. Thong qua qué
-‘Winh thue tp, t61 ky vong duce rau d6i tu duy chien
-use, ka nang viét noi dung cus hut, quin Wy én
-{tng 56 hiéu qué va hiéu sau non vé anh vi ngudiiéu
-dang ~ nang yéu t6 to in Id nn méng eho han
-‘win tr thanh mot Marketer linh hoat, sang 190
-
-@ HOC VAN
-
-© aloe Cong Nahé TPHCM (Hutech)
-
-= THANH TICH & HOAT DONG
-
-4 Sinhvien tu biew
-
-Sint vidn dat aig t6i da 40
-
-‘Tham gla cic dy dn ba bdo Khoa hoe
-
-Hoat dong thien nguyen
-
+Le Minh Tuan
+Phone: 0964928333
+Email: minhtuan032005@gmail.com
+National Economics University (NEU) | 2023-2027
+Information Technology & Data Transformation
+Second-year Student
+GPA: 3.4
+Programming: Python (basic scripting, data handling), SQL, HTML  
+Data Tools:  MS SQL, IBM Infosphere, Airtable (currently learning), Power BI, Google Sheets
+Communication & Collaboration: Clear written communication, proficient in English (both
+written and spoken), comfortable working in team environments
+Technology Fluency: Comfortable with online tools & platforms; quick to learn new systems
+Strengths: Self-learning, problem-solving, responsible, detail-oriented, eager to learn and open
+to feedback
+FSS - Financial Software Solutions
+Data Engineering
+Learn to use data query, extracting tools
+Developed knowledge of ETL workflows and data security considerations
+Gained foundational knowledge of financial and banking operations
+Creating data pipelines to collect, clean, and transform raw data (SQL Oracle) from various
+sources
+Supported data extraction and reporting
+Gained exposure to a professional and structured work environment
+Motivated second-year IT student with a strong interest in applying technology and data to the
+travel and tourism industry. I am passionate about research, digital transformation, and solving
+real-world problems through structured thinking and innovative solutions. With a curious and
+adaptable mindset, I am eager to explore how technology can enhance travel experiences,
+improve decision-making, and support the growth of this dynamic industry. I bring enthusiasm,
+responsibility, and a commitment to continuous learning in collaborative environments.
+SKILLS
+CONTACT
+SUMMARY
+EDUCATION
+WORK
+EXPERIENCE
+PROJECTS
+Travel Destination Research Tracker
+Link to project: Web Scrapping for Destination Data , Airtable File
+Tools: Python, Airtable, Excel
+Web Scraped travel destination information from a tourism website using Python
+Exported and cleaned the data in Excel
+Imported and organized the data in Airtable using custom views and tags
+Helped users easily compare and choose travel destinations based on type and season
+CERTIFICATES
+Prom The Starry Night
+Extracurricular club activities 
+IELTS 
+Band 7.0
+Pizza Sales Data Visualization
+Link to project: MinhTuan0305/Pizza-Data-Queries-and-Analyze
+Tools: SQL, Excel
+Cleaned and visualized data using SQL and Excel to support decision-making.
