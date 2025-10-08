@@ -253,15 +253,9 @@ class InterviewSystem:
         return self._parse_json_response(response)
     
     def _generate_technical_questions(self) -> List[Dict[str, Any]]:
-<<<<<<< HEAD
         """Tạo 3 câu hỏi kỹ thuật từ knowledge database dựa trên kiến thức cụ thể"""
         # Tìm kiến thức cụ thể từ knowledge database để tạo câu hỏi
         knowledge_docs = self.knowledge_retriever.get_relevant_documents("kiến thức chuyên môn lý thuyết bài học")
-=======
-        """Tạo 3 câu hỏi kỹ thuật từ knowledge database"""
-        # Tìm thông tin kỹ thuật liên quan ( cần sửa lại)
-        knowledge_docs = self.knowledge_retriever.get_relevant_documents("kiến thức kỹ thuật lập trình công nghệ")
->>>>>>> origin/main
         
         prompt_template = """
         Dựa trên kiến thức chuyên môn sau đây từ tài liệu học tập:
@@ -421,17 +415,11 @@ class InterviewSystem:
         # Hiển thị và thu thập câu trả lời
         for i, question in enumerate(questions):
             if i == 7:  # Câu hỏi sáng tạo
-<<<<<<< HEAD
                 # Tính điểm trung bình hiện tại
                 current_avg = self.total_score / len(self.scores) if self.scores else 0
                 if current_avg < 8.0:
                     print(f"\n📊 Điểm trung bình hiện tại: {current_avg:.1f}/10")
                     print("⚠️  Bạn cần đạt điểm trung bình ít nhất 8.0 để tiếp tục câu hỏi sáng tạo.")
-=======
-                if self.total_score < 8:
-                    print(f"\n📊 Điểm hiện tại: {self.total_score}/10")
-                    print("⚠️  Bạn cần đạt ít nhất 8 điểm để tiếp tục câu hỏi sáng tạo.") # Hãy sửa lại phần này, không cần phải phải in ra
->>>>>>> origin/main
                     break
             
             print(f"\n❓ Câu hỏi {question['id']} ({question['category']}):")
@@ -497,11 +485,11 @@ class InterviewSystem:
 
         Câu hỏi: {question['question']}
         Loại câu hỏi: {question['category']}
-                    # Tính điểm trung bình hiện tại
-                    current_avg = self.total_score / len(self.scores) if self.scores else 0
-                    if current_avg < 8.0:
-                        print(f"\n📊 Điểm trung bình hiện tại: {current_avg:.1f}/10")
-                        print("⚠️  Bạn cần đạt điểm trung bình ít nhất 8.0 để tiếp tục câu hỏi sáng tạo.")
+        Mục đích: {question['purpose']}
+        Câu trả lời: {answer}
+        Context liên quan: {context}
+
+        Chấm điểm theo thang điểm 10 cho từng tiêu chí:
         {criteria}
 
         Yêu cầu:
